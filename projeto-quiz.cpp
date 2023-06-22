@@ -3,25 +3,46 @@
 #include <stdlib.h>
 #include <locale>   
 #include <conio.h>
+#include "funcoes.cpp"
+#include "menus.cpp"
 
 using namespace std;
-/*
-Função de validar resposta:
-int validaResposta(int a){
-    switch(a){
+
+int main (){
+
+int escolhaPrincipal;
+
+
+bemVindo();
+do{
+    menuPrincipal();
+    cin >> escolhaPrincipal;
+
+    switch (escolhaPrincipal){
         case 1:
+            registo();
+            break;
         case 2:
+            login();
+            if(login() == false){
+                cout << "Login Inválido" << endl;
+                getch();
+                system("CLS");
+            }else{
+                cout << "Login Válido bem vindo" << endl;
+                getch();
+                system("CLS");
+            }
+            break;
         case 3:
-        case 4:
+            adeus();
+            break;
+        default:
+            cout << " > ESCOLHA INVÁLIDA" << endl;
+            cout << "> pressione qualquer tecla......" <<endl;
+            getch();
+            system("CLS");
     }
+}while(escolhaPrincipal != 3);
 }
 
-Podem fazer melhor, pesquisem por isto:
-struct Question {
-    string question;
-    string options[4];
-    int correct_option;
-};
-
-STRUCTS
-*/
