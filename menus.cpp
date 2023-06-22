@@ -14,8 +14,7 @@ void bemVindo(){
 void menuPrincipal (){
     cout << "[1] - Sign In" << endl;
     cout << "[2] - Login" << endl;
-    cout << "[3] - Regras" << endl;
-    cout << "[4] - Sair" << endl;
+    cout << "[3] - Sair" << endl;
 }
 void menuJogo (){
     // mostrar aqui o username e pontuação total
@@ -25,6 +24,7 @@ void menuJogo (){
     cout << "[3] - Voltar atrás" << endl;
 }
 void menuTemas(){
+    int escolhaTema;
     cout << "[1] - Videojogos" << endl;
     cout << "[2] - Música" << endl;
     cout << "[3] - Geografia" << endl;
@@ -45,6 +45,7 @@ int main (){
 
 int escolhaPrincipal;
 
+bemVindo();
 do{
     menuPrincipal();
     cin >> escolhaPrincipal;
@@ -57,16 +58,13 @@ do{
             // login
             break;
         case 3:
-            // regras
-            break;
-        case 4:
             adeus();
             break;
         default:
-            cout << " > ESCOLHA INVÁLIDA"
+            cout << " > ESCOLHA INVÁLIDA" << endl;
             cout << "> pressione qualquer tecla......" <<endl;
             getch();
             system("CLS");
     }
-}
+}while(escolhaPrincipal != 3);
 }
