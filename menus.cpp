@@ -40,31 +40,3 @@ void adeus (){
     getch();
     system("CLS");
 }
-
-int main (){
-
-int escolhaPrincipal;
-
-bemVindo();
-do{
-    menuPrincipal();
-    cin >> escolhaPrincipal;
-
-    switch (escolhaPrincipal){
-        case 1:
-            // sign in
-            break;
-        case 2:
-            // login
-            break;
-        case 3:
-            adeus();
-            break;
-        default:
-            cout << " > ESCOLHA INVÁLIDA" << endl;
-            cout << "> pressione qualquer tecla......" <<endl;
-            getch();
-            system("CLS");
-    }
-}while(escolhaPrincipal != 3);
-}
