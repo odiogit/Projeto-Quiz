@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include <locale>   
 #include <conio.h>
+#include <iostream>
 
+using namespace std;
 /*
 Função de validar resposta:
 int validaResposta(int a){
