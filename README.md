@@ -1,5 +1,5 @@
 # Projeto Quiz
-Projeto de grupo de Projeto de Programação
+ Projeto de grupo de Projeto de Programação
 Helena Leonardo Diogo
 
 
@@ -41,23 +41,3 @@ Cada uma destas características adicionais implementadas, valerão mais pontos
 6. Tabela de líderes (+ 5 pontos)
 
  
-/*
-Função de validar resposta:
-int validaResposta(int a){
-    switch(a){
-        case 1:
-        case 2:
-        case 3:
-        case 4:
-    }
-}
-
-Podem fazer melhor, pesquisem por isto:
-struct Question {
-    string question;
-    string options[4];
-    int correct_option;
-};
-
-STRUCTS
-*/
