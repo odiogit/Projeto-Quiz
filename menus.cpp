@@ -14,8 +14,7 @@ void bemVindo(){
 void menuPrincipal (){
     cout << "[1] - Sign In" << endl;
     cout << "[2] - Login" << endl;
-    cout << "[3] - Regras" << endl;
-    cout << "[4] - Sair" << endl;
+    cout << "[3] - Sair" << endl;
 }
 void menuJogo (){
     // mostrar aqui o username e pontuação total
@@ -57,9 +56,6 @@ do{
             // login
             break;
         case 3:
-            // regras
-            break;
-        case 4:
             adeus();
             break;
         default:
