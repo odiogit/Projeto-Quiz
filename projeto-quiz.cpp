@@ -20,19 +20,12 @@ do{
 
     switch (escolhaPrincipal){
         case 1:
-            registo();
+            registracao();
             break;
         case 2:
             login();
-            if(login() == false){
-                cout << "Login Inválido" << endl;
-                getch();
-                system("CLS");
-            }else{
-                cout << "Login Válido bem vindo" << endl;
-                getch();
-                system("CLS");
-            }
+        
+            
             break;
         case 3:
         case 4:
