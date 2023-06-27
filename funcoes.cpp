@@ -6,12 +6,14 @@
 
 using namespace std;
 
-string email, username, password, loginif;
-string emailLogin, usernameLogin, passwordLogin;
+string username, password, email;
+string user, pass, mail;
+int erro = 0;
 
-void registo(){
-    int score = 0;
-     cout <<"Criar Conta" << endl;
+int registracao(){
+
+cout <<"Criar Conta" << endl;
+
                 cout <<endl;
 
                 cout << "Insira o seu EMAIL: ";
@@ -23,38 +25,55 @@ void registo(){
 
                 cout <<"Escolha uma PASSWORD: ";
                 cin >> password;
-                
-                ofstream file; //ofstream creates a file
 
-                file.open(loginif+".txt");
-                file << email << endl << username <<endl << password << score;
-                file.close();
-                cout <<"Bem Vindo " << username << "!" << endl;
-                getch();
-                system("CLS");
+
+
+                  ofstream file; //ofstream creates a file
+
+                     file.open(email+ ".txt");
+
+                     file << email << endl << username <<endl << password;
+
+                     file.close();
+                     cout <<"Bem Vindo! " << email << "!" << endl;
 }
-
 bool login(){
 
-    cout <<"Insira o seu EMAIL: ";
-    cin >> emailLogin;
-    cout <<"Insira o seu USERNAME: ";
-    cin.ignore();
-    getline(cin, usernameLogin);
-    cout <<"Insira a sua PASSWORD: ";
-    cin >> passwordLogin;
+ setlocale(LC_ALL,"");
 
-    ifstream read(loginif+".txt"); //ifstream read a file
-    getline(read, email); // read the email
-    getline(read, username); //reads the username
-    getline(read, password); //reads the password
 
-    if ( usernameLogin == username && passwordLogin == password && emailLogin == email){
-        return true;
-    }else{
-        return false;
+
+ cout <<"Insira o seu EMAIL: ";
+ cin >> email;
+ cout <<"Insira o seu USERNAME: ";
+ cin.ignore();
+ getline(cin, username);
+ cout <<"Insira a sua PASSWORD: ";
+ cin >> password;
+
+
+ ifstream read(email + ".txt"); //ifstream read a file
+ getline(read, mail); // read the email
+ getline(read, user); //reads the username
+ getline(read, pass); //reads the password
+
+ if ( user == username && pass == password && mail == email){
+    return true;
+ }else {
+     erro++;
+ }  if(erro == 3){
+    cout << "3 TENTATIVAS ERRADAS, A SUA CONTA FOI BLOQUEADA!" << endl;
+    cout << "pressione qualquer tecla" << endl;
+    getch();
+    exit(0);
+ }
+    else if(erro == 1){
+        cout << "ERRADO. 2 TENTATIVAS RESTANTES!" << endl;
+    }else if(erro == 2){
+        cout << "ERRADO. 1 TENTATIVA RESTANTE!" << endl;
     }
  }
+
 void regras(){
    cout << " -------------------- " << endl;
    cout << "|       Regras:      |" << endl;
