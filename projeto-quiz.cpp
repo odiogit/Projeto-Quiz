@@ -1,37 +1,44 @@
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale>   
+#include <locale.h>   
 #include <conio.h>
 #include "funcoes.cpp"
 #include "menus.cpp"
+#include "jogo.cpp"
 
 using namespace std;
 
 int main (){
 
-int escolhaPrincipal;
+    setlocale(LC_ALL,"");
 
+    int escolhaPrincipal;
 
-bemVindo();
-do{
+    bemVindo();
+    do{
     menuPrincipal();
     cin >> escolhaPrincipal;
 
     switch (escolhaPrincipal){
         case 1:
-            registo();
+            registracao();
             break;
         case 2:
-            login();
-            if(login() == false){
-                cout << "Login Inválido" << endl;
-                getch();
-                system("CLS");
-            }else{
-                cout << "Login Válido bem vindo" << endl;
-                getch();
-                system("CLS");
+            if(login() == true){
+                int escolhaJogo;
+                do{
+                menuJogo();
+                cin >> escolhaJogo;
+                switch (escolhaJogo){
+                    case 1:
+                        menuTemas();
+                        break;
+                    case 2:
+                        regras();
+                        break;
+                }
+                }while(escolhaJogo != 3);
             }
             break;
         case 3:
@@ -45,4 +52,3 @@ do{
     }
 }while(escolhaPrincipal != 3);
 }
-
