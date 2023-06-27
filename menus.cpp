@@ -3,6 +3,7 @@
 #include <locale>   
 #include <conio.h>
 #include <iostream>
+#include "funcoes.cpp"
 
 using namespace std;
 
@@ -18,6 +19,7 @@ void menuPrincipal (){
 }
 void menuJogo (){
     // mostrar aqui o username e pontuação total
+    cout << "> utilizador: " << username << "   > pontuação: " << endl;
     cout << endl;
     cout << "[1] - Jogar" << endl;
     cout << "[2] - Regras" << endl;
