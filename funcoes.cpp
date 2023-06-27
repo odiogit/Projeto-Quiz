@@ -10,7 +10,6 @@ string username, password, email;
 string user, pass, mail;
 int erro = 0;
 
-
 int registracao(){
 
 cout <<"Criar Conta" << endl;
@@ -73,6 +72,5 @@ bool login(){
     }else if(erro == 2){
         cout << "ERRADO. 1 TENTATIVA RESTANTE!" << endl;
     }
-
  }
 

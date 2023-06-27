@@ -5,12 +5,9 @@
 #include <conio.h>
 #include "funcoes.cpp"
 #include "menus.cpp"
+#include "jogo.cpp"
 
 using namespace std;
-
-
-
-
 
 int main (){
 
@@ -27,12 +24,19 @@ do{
             registracao();
             break;
         case 2:
-            login();
-        
-            
+            if(login() == true){
+                int escolhaJogo;
+                do{
+                menuJogo();
+                cin >> escolhaJogo;
+                switch (escolhaJogo){
+                    case 1:
+                        menuTemas();
+                }
+                }while(escolhaJogo != 3);
+            }
             break;
         case 3:
-        case 4:
             adeus();
             break;
         default:
