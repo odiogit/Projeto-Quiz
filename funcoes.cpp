@@ -74,3 +74,15 @@ bool login(){
     }
  }
 
+void regras(){
+   cout << " -------------------- " << endl;
+   cout << "|       Regras:      |" << endl;
+   cout << " -------------------- " << endl;
+   cout << endl;
+   cout << "Neste Quiz vai testar o seu conhecimento em três tópicos: Videojogos, Música e Geografia." << endl;
+   cout << "\nPara iniciar o jogo deve escolher a opção [JOGAR] no menú de jogo, e de seguida escolher o seu tema, pressionando [1 -], [2] ou [3]. Irá receber 10 perguntas pertinentes à sua área de conhecimento selecionada, cada uma com 4 possíveis opções de resposta. Para responder precisa apenas de selecionar o número correspondente à resposta que deseja, e os pontos serão automaticamente adicionados caso escolha corretamente." << endl;
+   cout << "No final das 10 questões poderá escolher jogar novamente para continuar a somar à sua pontuação e experimentar os restantes temas." << endl;
+   cout << endl << "Pressione qualquer tecla para voltar ao menú..." << endl;
+   getch();
+   system("CLS");
+ }
