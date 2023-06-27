@@ -6,63 +6,73 @@
 
 using namespace std;
 
-string email, username, password, loginif;
-string emailLogin, usernameLogin, passwordLogin;
+string username, password, email;
+string user, pass, mail;
 int erro = 0;
+
 
 int registracao(){
 
-cout << "Insira o seu username: ";
-cin.ignore();
-getline(cin, username);
-cout << "Insira o seu email: ";
-cin >> email;
-cout << "Insira a sua password: ";
-cin >> password;
+cout <<"Criar Conta" << endl;
+
+                cout <<endl;
+
+                cout << "Insira o seu EMAIL: ";
+                cin >> email;
+
+                cout <<"Escolha um USERNAME: ";
+                cin.ignore();
+                getline(cin, username);
+
+                cout <<"Escolha uma PASSWORD: ";
+                cin >> password;
 
 
-ofstream file;
-    file.open(email + ".txt");
-    file << email << endl << username << endl << password;
-    file.close(); 
 
-cout << "Bem vindo " << username << endl;
+                  ofstream file; //ofstream creates a file
 
-return 0;
+                     file.open(email+ ".txt");
+
+                     file << email << endl << username <<endl << password;
+
+                     file.close();
+                     cout <<"Bem Vindo! " << email << "!" << endl;
 }
-
-
 bool login(){
 
-cout << "Insira o seu email: ";
-cin >> emailLogin;
-cout << "Insira o seu username: ";
-cin.ignore();
-getline(cin, usernameLogin);
-cout << "Insira a password: ";
-cin >> passwordLogin;
+ setlocale(LC_ALL,"");
 
-ifstream read (email + ".txt");
-getline(read, email);
-getline(read, username);
-getline(read, password);
 
-if ( emailLogin == email && usernameLogin ==  username  && passwordLogin == password){
- return true;
- 
+
+ cout <<"Insira o seu EMAIL: ";
+ cin >> email;
+ cout <<"Insira o seu USERNAME: ";
+ cin.ignore();
+ getline(cin, username);
+ cout <<"Insira a sua PASSWORD: ";
+ cin >> password;
+
+
+ ifstream read(email + ".txt"); //ifstream read a file
+ getline(read, mail); // read the email
+ getline(read, user); //reads the username
+ getline(read, pass); //reads the password
+
+ if ( user == username && pass == password && mail == email){
+    return true;
  }else {
-    erro++;
+     erro++;
  }  if(erro == 3){
     cout << "3 TENTATIVAS ERRADAS, A SUA CONTA FOI BLOQUEADA!" << endl;
     cout << "pressione qualquer tecla" << endl;
     getch();
     exit(0);
  }
- else if(erro == 1){
-    cout << "ERRADO. 2 TENTATIVAS RESTANTES!" << endl;
- }else if(erro == 2){
-     cout << "ERRADO. 1 TENTATIVA RESTANTE!" << endl;
-}
+    else if(erro == 1){
+        cout << "ERRADO. 2 TENTATIVAS RESTANTES!" << endl;
+    }else if(erro == 2){
+        cout << "ERRADO. 1 TENTATIVA RESTANTE!" << endl;
+    }
 
  }
 
