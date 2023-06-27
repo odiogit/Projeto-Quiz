@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale>   
 #include <conio.h>
 #include <iostream>
 
@@ -27,11 +26,11 @@ void menuJogo (){
 void menuTemas(){
     int escolhaTema;
     do{
-    cout << "[1] - Videojogos" << endl;
-    cout << "[2] - Música" << endl;
-    cout << "[3] - Geografia" << endl;
-    cout << "Escolha o tema: " << endl;
-    cin >> escolhaTema;
+        cout << "[1] - Videojogos" << endl;
+        cout << "[2] - Música" << endl;
+        cout << "[3] - Geografia" << endl;
+        cout << "Escolha o tema: " << endl;
+        cin >> escolhaTema;
     }while(escolhaTema < 1 || escolhaTema > 3);
 }
 void adeus (){
