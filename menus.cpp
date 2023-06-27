@@ -32,6 +32,9 @@ void menuTemas(){
         cout << "Escolha o tema: " << endl;
         cin >> escolhaTema;
     }while(escolhaTema < 1 || escolhaTema > 3);
+    cout << "Pressione para continuar para o jogo!" << endl;
+    getch();
+    system("CLS");
 }
 void adeus (){
     cout << endl;

@@ -13,24 +13,26 @@ int main (){
     int escolhaPrincipal;
 
     bemVindo();
-    do{
+    do{ //loop para garantir que o user escolhe uma opção válida
         menuPrincipal();
         cin >> escolhaPrincipal;
 
         switch (escolhaPrincipal){
             case 1:
+                system("CLS");
                 registracao();
                 getch();
                 system("CLS");
                 break;
             case 2:
-                if(login() == true){
+                system("CLS");
+                if(login() == true){//Validação para login
                     cout << "\n > Boas vindas " << username << "!" << endl;
                     cout << "Pressione qualquer tecla para JOGAR" << endl;
                     getch();
                     system("CLS");
                     int escolhaJogo;
-                    do{
+                    do{//loop para escolha válida dentro do menu do jogo
                         menuJogo();
                         cin >> escolhaJogo;
                         switch (escolhaJogo){
@@ -53,6 +55,11 @@ int main (){
                                 break;
                         }
                     }while(escolhaJogo != 3);
+                }else{
+                    cout << "LOGIN INVÁLIDO, CONTA TERMINADA!" << endl;
+                    cout << "PRESSIONE PARA VOLTAR AO MENU!" << endl;
+                    getch();
+                    system("CLS");
                 }
                 break;
             case 3:

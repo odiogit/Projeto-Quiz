@@ -12,30 +12,28 @@ int erro = 0;
 int registracao(){
    cout <<"Criar Conta" << endl;
 
-                  cout <<endl;
+   cout <<endl;
 
-                  cout << "Insira o seu EMAIL: ";
-                  cin >> email;
+   cout << "Insira o seu EMAIL: ";
+   cin >> email;
 
-                  cout <<"Escolha um USERNAME: ";
-                  cin.ignore();
-                  getline(cin, username);
+   cout <<"Escolha um USERNAME: ";
+   cin.ignore();
+   getline(cin, username);
 
-                  cout <<"Escolha uma PASSWORD: ";
-                  cin >> password;
+   cout <<"Escolha uma PASSWORD: ";
+   cin >> password;
 
 
 
-                     ofstream file; //ofstream creates a file
+   ofstream file; //ofstream creates a file
 
-                        file.open(email+ ".txt");
+   file.open(email+ ".txt");
 
-                        file << email << endl << username <<endl << password;
+   file << email << endl << username <<endl << password;
 
-                        file.close();
-                        cout <<"Bem Vindo! " << email << "!" << endl;
-   getch();
-   system("CLS");
+   file.close();
+   cout <<"Bem Vindo! " << email << "!" << endl;
 }
 
 bool login(){
@@ -57,18 +55,8 @@ bool login(){
    if ( user == username && pass == password && mail == email){
       return true;
    }else {
-      erro++;
-   }  if(erro == 3){
-      cout << "3 TENTATIVAS ERRADAS, A SUA CONTA FOI BLOQUEADA!" << endl;
-      cout << "pressione qualquer tecla" << endl;
-      exit(0);
+      return false;    
    }
-      else if(erro == 1){
-         cout << "ERRADO. 2 TENTATIVAS RESTANTES!" << endl;
-      }else if(erro == 2){
-         cout << "ERRADO. 1 TENTATIVA RESTANTE!" << endl;
-      }
-     
 }
 
 void regras(){
