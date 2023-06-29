@@ -17,38 +17,47 @@ int main (){
 
     bemVindo();
     do{
-    menuPrincipal();
-    cin >> escolhaPrincipal;
+        menuPrincipal();
+        cin >> escolhaPrincipal;
 
-    switch (escolhaPrincipal){
-        case 1:
-            registracao();
-            break;
-        case 2:
-            if(login() == true){
-                int escolhaJogo;
-                do{
-                menuJogo();
-                cin >> escolhaJogo;
-                switch (escolhaJogo){
-                    case 1:
-                        menuTemas();
-                        break;
-                    case 2:
-                        regras();
-                        break;
+        switch (escolhaPrincipal){
+            case 1:
+                registracao();
+                break;
+            case 2:
+                if(login() == true){
+                    int escolhaJogo;
+                    do{
+                    menuJogo();
+                    cin >> escolhaJogo;
+                    switch (escolhaJogo){
+                        case 1:
+                            int escolhaTema;
+                            do{
+                                menuTemas();
+                                cin >> escolhaTema;
+                                switch(escolhaTema){
+                                    case 1:
+                                    jogo();
+                                    break;
+                                }
+                            }while(escolhaTema < 1 || escolhaTema > 3);
+                            break;
+                        case 2:
+                            regras();
+                            break;
+                    }
+                    }while(escolhaJogo != 3);
                 }
-                }while(escolhaJogo != 3);
-            }
-            break;
-        case 3:
-            adeus();
-            break;
-        default:
-            cout << " > ESCOLHA INVÁLIDA" << endl;
-            cout << "> pressione qualquer tecla......" <<endl;
-            getch();
-            system("CLS");
+                break;
+            case 3:
+                adeus();
+                break;
+            default:
+                cout << " > ESCOLHA INVÁLIDA" << endl;
+                cout << "> pressione qualquer tecla......" <<endl;
+                getch();
+                system("CLS");
     }
 }while(escolhaPrincipal != 3);
 }

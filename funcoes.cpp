@@ -57,22 +57,12 @@ bool login(){
  getline(read, user); //reads the username
  getline(read, pass); //reads the password
 
- if ( user == username && pass == password && mail == email){
-    return true;
- }else {
-     erro++;
- }  if(erro == 3){
-    cout << "3 TENTATIVAS ERRADAS, A SUA CONTA FOI BLOQUEADA!" << endl;
-    cout << "pressione qualquer tecla" << endl;
-    getch();
-    exit(0);
- }
-    else if(erro == 1){
-        cout << "ERRADO. 2 TENTATIVAS RESTANTES!" << endl;
-    }else if(erro == 2){
-        cout << "ERRADO. 1 TENTATIVA RESTANTE!" << endl;
-    }
- }
+   if ( user == username && pass == password && mail == email){
+      return true;
+   }else {
+      return false;
+   }
+}
 
 void regras(){
    cout << " -------------------- " << endl;

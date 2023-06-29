@@ -25,14 +25,11 @@ void menuJogo (){
     cout << "[3] - Voltar atrás" << endl;
 }
 void menuTemas(){
-    int escolhaTema;
-    do{
+
     cout << "[1] - Videojogos" << endl;
     cout << "[2] - Música" << endl;
     cout << "[3] - Geografia" << endl;
     cout << "Escolha o tema: " << endl;
-    cin >> escolhaTema;
-    }while(escolhaTema < 1 || escolhaTema > 3);
 }
 void adeus (){
     cout << endl;
