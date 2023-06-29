@@ -28,7 +28,8 @@ void menuJogo (){
     cout << endl;
     cout << "[1] - Jogar" << endl;
     cout << "[2] - Regras" << endl;
-    cout << "[3] - Voltar atrás" << endl;
+    cout << "[3] - Reset de pontuação" << endl;
+    cout << "[4] - Voltar atrás" << endl;
 }
 void menuTemas(){
     int escolhaTema;

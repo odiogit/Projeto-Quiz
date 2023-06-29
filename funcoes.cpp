@@ -9,6 +9,7 @@ using namespace std;
 string username, password, email, score;
 string user, pass, mail;
 int erro = 0;
+int resertscore = 0;
 
 int registracao(){
 cout <<"Criar Conta" << endl;
@@ -25,7 +26,7 @@ cout <<"Criar Conta" << endl;
                 cout <<"Escolha uma PASSWORD: ";
                 cin >> password;
 
-                  int score = 0;  
+                   int score = 0; 
 
                   ofstream file; //ofstream creates a file
 
@@ -34,7 +35,11 @@ cout <<"Criar Conta" << endl;
                      file << email << endl << username <<endl << password << endl << score;
 
                      file.close();
+
+                    
+
                      cout <<"Bem Vindo! " << email << "!" << endl;
+                     
 }
 bool login(){
 
@@ -55,7 +60,7 @@ bool login(){
  getline(read, mail); 
  getline(read, user); 
  getline(read, pass); 
-
+ getline(read, score);
    if ( user == username && pass == password && mail == email){
       return true;
    }else {
@@ -74,4 +79,20 @@ void regras(){
    cout << endl << "Pressione qualquer tecla para voltar ao menú..." << endl;
    getch();
    system("CLS");
+ }
+
+
+
+ void resetscore(){
+   
+   int score = 0;
+
+   ofstream file; //ofstream creates a file
+   file.open(email+ ".txt");
+
+   file << email << endl << username <<endl << password << endl << score;
+
+   file.close();
+   
+   
  }

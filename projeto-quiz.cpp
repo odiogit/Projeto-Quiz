@@ -44,7 +44,12 @@ do{
                                 system("CLS");
                                 regras();
                                 break;
+
                             case 3:
+                                system("CLS");
+                                resetscore();
+
+                            case 4:
                                 system("CLS");
                                 break;
                             default:
@@ -54,7 +59,7 @@ do{
                                 system("CLS");
                                 break;
                         }
-                    }while(escolhaJogo != 3);
+                    }while(escolhaJogo != 4);
                 }else{
                     cout << "LOGIN INVÁLIDO, CONTA TERMINADA!" << endl;
                     cout << "PRESSIONE PARA VOLTAR AO MENU!" << endl;
