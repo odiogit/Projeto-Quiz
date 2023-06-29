@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale>   
 #include <conio.h>
 #include <iostream>
 
@@ -16,8 +17,14 @@ void menuPrincipal (){
     cout << "[3] - Sair" << endl;
 }
 void menuJogo (){
-    // mostrar aqui o username e pontuação total
-    cout << "> utilizador: " << username << "   > pontuação: " << endl;
+    
+   ifstream read(email + ".txt"); //ifstream read a file
+    getline(read, mail); // read the email
+    getline(read, user); //reads the username
+    getline(read, pass); //reads the password
+    getline(read, score);
+
+    cout << "> utilizador: " << username << "   > pontuação: " << score << endl;
     cout << endl;
     cout << "[1] - Jogar" << endl;
     cout << "[2] - Regras" << endl;
@@ -30,7 +37,7 @@ void menuTemas(){
         cout << "[2] - Música" << endl;
         cout << "[3] - Geografia" << endl;
         cout << "Escolha o tema: " << endl;
-        cin >> escolhaTema;
+         cin >> escolhaTema;
     }while(escolhaTema < 1 || escolhaTema > 3);
     cout << "Pressione para continuar para o jogo!" << endl;
     getch();

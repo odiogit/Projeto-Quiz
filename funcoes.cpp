@@ -1,63 +1,67 @@
 #include <iostream>
 #include <stdlib.h>
+#include <locale.h>
 #include <conio.h>
 #include <fstream>
 
 using namespace std;
 
-string username, password, email;
+string username, password, email, score;
 string user, pass, mail;
 int erro = 0;
 
 int registracao(){
-   cout <<"Criar Conta" << endl;
+cout <<"Criar Conta" << endl;
 
-   cout <<endl;
+                cout <<endl;
 
-   cout << "Insira o seu EMAIL: ";
-   cin >> email;
+                cout << "Insira o seu EMAIL: ";
+                cin >> email;
 
-   cout <<"Escolha um USERNAME: ";
-   cin.ignore();
-   getline(cin, username);
+                cout <<"Escolha um USERNAME: ";
+                cin.ignore();
+                getline(cin, username);
 
-   cout <<"Escolha uma PASSWORD: ";
-   cin >> password;
+                cout <<"Escolha uma PASSWORD: ";
+                cin >> password;
 
+                  int score = 0;  
 
+                  ofstream file; //ofstream creates a file
 
-   ofstream file; //ofstream creates a file
+                     file.open(email+ ".txt");
 
-   file.open(email+ ".txt");
+                     file << email << endl << username <<endl << password << endl << score;
 
-   file << email << endl << username <<endl << password;
-
-   file.close();
-   cout <<"Bem Vindo! " << email << "!" << endl;
+                     file.close();
+                     cout <<"Bem Vindo! " << email << "!" << endl;
 }
-
 bool login(){
 
-   cout <<"Insira o seu EMAIL: ";
-   cin >> email;
-   cout <<"Insira o seu USERNAME: ";
-   cin.ignore();
-   getline(cin, username);
-   cout <<"Insira a sua PASSWORD: ";
-   cin >> password;
+ setlocale(LC_ALL,"");
 
 
-   ifstream read(email + ".txt"); //ifstream read a file
-   getline(read, mail); // read the email
-   getline(read, user); //reads the username
-   getline(read, pass); //reads the password
+
+ cout <<"Insira o seu EMAIL: ";
+ cin >> email;
+ cout <<"Insira o seu USERNAME: ";
+ cin.ignore();
+ getline(cin, username);
+ cout <<"Insira a sua PASSWORD: ";
+ cin >> password;
+
+
+ ifstream read(email + ".txt"); 
+ getline(read, mail); 
+ getline(read, user); 
+ getline(read, pass); 
 
    if ( user == username && pass == password && mail == email){
       return true;
    }else {
       return false;    
    }
-}
+ }
 
 void regras(){
    cout << " -------------------- " << endl;

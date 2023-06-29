@@ -4,28 +4,28 @@
 #include <conio.h>
 #include "funcoes.cpp"
 #include "menus.cpp"
-#include "jogo.cpp"
 
 using namespace std;
+ int escolhaPrincipal;
 
 int main (){
 
-    int escolhaPrincipal;
+bemVindo();
+do{
+    
 
-    bemVindo();
-    do{ //loop para garantir que o user escolhe uma opção válida
-        menuPrincipal();
-        cin >> escolhaPrincipal;
+    menuPrincipal();
+    cin >> escolhaPrincipal;
 
-        switch (escolhaPrincipal){
-            case 1:
-                system("CLS");
+    switch (escolhaPrincipal){
+        case 1:
+            system("CLS");
                 registracao();
                 getch();
                 system("CLS");
-                break;
-            case 2:
-                system("CLS");
+            break;
+        case 2:
+            system("CLS");
                 if(login() == true){//Validação para login
                     cout << "\n > Boas vindas " << username << "!" << endl;
                     cout << "Pressione qualquer tecla para JOGAR" << endl;
@@ -61,16 +61,16 @@ int main (){
                     getch();
                     system("CLS");
                 }
-                break;
-            case 3:
-                system("CLS");
+            break;
+        case 3:
+            system("CLS");
                 adeus();
-                break;
-            default:
-                cout << " > ESCOLHA INVÁLIDA" << endl;
-                cout << "> pressione qualquer tecla para tentar novamente......" <<endl;
-                getch();
-                system("CLS");
-        }
-    }while(escolhaPrincipal != 3);
+            break;
+        default:
+            cout << " > ESCOLHA INVÁLIDA" << endl;
+            cout << "> pressione qualquer tecla......" <<endl;
+            getch();
+            system("CLS");
+    }
+}while(escolhaPrincipal != 3);
 }
