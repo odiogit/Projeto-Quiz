@@ -48,7 +48,6 @@ do{
                             case 3:
                                 system("CLS");
                                 resetscore();
-
                             case 4:
                                 system("CLS");
                                 break;
