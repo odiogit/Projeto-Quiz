@@ -13,8 +13,6 @@ int main (){
 
 bemVindo();
 do{
-    
-
     menuPrincipal();
     cin >> escolhaPrincipal;
 
@@ -46,7 +44,7 @@ do{
                                     switch(escolhaTema){
                                         case 1:
                                         system("CLS");
-                                        jogo();
+                                        jogoVideojogos();
                                         break;
                                     }
                                 }while(escolhaTema < 1 || escolhaTema > 3);

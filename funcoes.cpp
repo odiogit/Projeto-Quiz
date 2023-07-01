@@ -14,65 +14,60 @@ int erro = 0;
 int resertscore = 0;
 
 int registracao(){
-cout <<"Criar Conta" << endl;
+   cout <<"Criar Conta" << endl;
 
-                cout <<endl;
+   cout <<endl;
 
-                cout << "Insira o seu EMAIL: ";
-                cin >> email;
+   cout << "Insira o seu EMAIL: ";
+   cin >> email;
 
-                cout <<"Escolha um USERNAME: ";
-                cin.ignore();
-                getline(cin, username);
+   cout <<"Escolha um USERNAME: ";
+   cin.ignore();
+   getline(cin, username);
 
-                cout <<"Escolha uma PASSWORD: ";
-                cin >> password;
+   cout <<"Escolha uma PASSWORD: ";
+   cin >> password;
 
-                
+   int score = 0; 
 
+   ofstream file; //ofstream creates a file
 
+   file.open(email+ ".txt");
 
-                   int score = 0; 
+   file << email << endl << username <<endl << password << endl << score << endl;
+   
+   file.close();
 
-                  ofstream file; //ofstream creates a file
+   cout <<"Bem Vindo! " << email << "!" << endl;
 
-                     file.open(email+ ".txt");
-
-                     file << email << endl << username <<endl << password << endl << score << endl;
-
-                     file.close();
-
-                    
-
-                     cout <<"Bem Vindo! " << email << "!" << endl;
-                     
+   return 1;         
 }
 bool login(){
 
- setlocale(LC_ALL,"");
+   setlocale(LC_ALL,"");
 
 
 
- cout <<"Insira o seu EMAIL: ";
- cin >> email;
- cout <<"Insira o seu USERNAME: ";
- cin.ignore();
- getline(cin, username);
- cout <<"Insira a sua PASSWORD: ";
- cin >> password;
+   cout <<"Insira o seu EMAIL: ";
+   cin >> email;
+   cout <<"Insira o seu USERNAME: ";
+   cin.ignore();
+   getline(cin, username);
+   cout <<"Insira a sua PASSWORD: ";
+   cin >> password;
 
 
- ifstream read(email + ".txt"); 
- getline(read, mail); 
- getline(read, user); 
- getline(read, pass); 
- getline(read, score);
-   if ( user == username && pass == password && mail == email){
-      return true;
-   }else {
-      return false;    
+   ifstream read(email + ".txt"); 
+   getline(read, mail); 
+   getline(read, user); 
+   getline(read, pass); 
+   getline(read, score);
+      if ( user == username && pass == password && mail == email){
+         return true;
+      }else {
+         return false;    
+      }
    }
- }
 
 void regras(){
    cout << " -------------------- " << endl;
@@ -87,18 +82,17 @@ void regras(){
    system("CLS");
  }
 
-
-
 void resetscore(){
 
-   int resetscore; 
+   int resertscore; 
 
-      cout << "[1] - Reset de pontuação"<< endl << "[2] - Voltar atraz"<< endl;
+      cout << "[1] - Reset de pontuação"<< endl << "[2] - Voltar atras"<< endl;
       cin >> resertscore;
 
          if (resertscore == 1){
             cout << "Score resetado" << endl;
             getch();
+            system("CLS");
 
             int score = 0;
 
@@ -108,13 +102,12 @@ void resetscore(){
             file << email << endl << username <<endl << password << endl << score;
 
             file.close();
-               } else {
-                  cout << "Score nao resetado!! " << endl << "Presione qualquer tecla para continuar";
-                  getch();
+         } else {
+            cout << "Score nao resetado!! " << endl << "Pressione qualquer tecla para continuar";
+            getch();
+            system("CLS");
+         }
    }
-   }
-
-
 
 int deleteconta(){ // Delete de conta
 
@@ -125,11 +118,11 @@ int deleteconta(){ // Delete de conta
 
     deleteconta = remove(delEmail); //CUIDADO isto faz dele de qualquer ficheiro se o nome for inserido coretamente.
     if(deleteconta == 0){
-      cout << "\n Conta deletada com sucesso!\n";
+      cout << "\nConta deletada com sucesso!\n";
     } else {
-      cout << "\n Error conta nao deletada";
+      cout << "\nError conta nao deletada";
     }
-    cout <<"Pressione qualquer tecla para voltar ao menu principal";
+    cout <<"\nPressione qualquer tecla para voltar ao menu principal";
     getch();
     
     system ("CLS");
