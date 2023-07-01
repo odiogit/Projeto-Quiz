@@ -46,7 +46,7 @@ do{
                                     switch(escolhaTema){
                                         case 1:
                                         system("CLS");
-                                        jogoVideojogos();
+                                        jogo();
                                         break;
                                     }
                                 }while(escolhaTema < 1 || escolhaTema > 3);
