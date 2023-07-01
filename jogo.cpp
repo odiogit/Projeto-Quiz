@@ -44,6 +44,7 @@ struct perguntas{
 };
 
 void jogoVideojogos(){
+
     int opcao;
 
     perguntas questao1;
@@ -186,6 +187,412 @@ void jogoVideojogos(){
     questao20.respostaErrada1 = "Vampire Mommy";
     questao20.respostaErrada2 = "Don't go in the Doll House";
     questao20.respostaErrada3 = "They took my girlfriend and demon child";
+
+    perguntas questao[20] = {questao1,questao2,questao3,questao4,questao5,questao6,questao7,questao8,questao9,questao10,questao11,questao12,questao13,questao14,questao15,questao16,questao17,questao18,questao19,questao20}; //Vetor do tipo perguntas que recebe as diferentes questões criadas
+    unsigned seed = chrono::system_clock::now().time_since_epoch().count(); 
+    shuffle(begin(questao), end(questao), default_random_engine(seed)); // o vetor que contém as questões é baralhado de modo a que as perguntas sejam feitas em ordem diferente de cada vez que se corre o jogo
+    for (int i = 0; i < 10; i++){ //loop que vai percorrer o vetor questao
+        questao[i].mostrarPergunta(opcao); //função mostrarpergunta executa a questão no indice i
+      
+        if (opcao == questao[i].indiceRespostaCorreta){ //condição para verificar resposta certa
+            cout << endl << "Parabens, esta certo!" << endl;
+            pontos += 5;
+        
+
+            ifstream read(email + ".txt"); 
+            getline(read, mail); 
+            getline(read, user); 
+            getline(read, pass); 
+            getline(read, score);
+
+            int score; 
+
+            pontostotais += pontos;
+ 	       
+            cout << "" << pontos;
+            
+            pontostotais = pontos;
+           
+            score = pontostotais;
+
+
+             ofstream file; 
+            file.open(email+ ".txt");
+
+            file << email << endl << username <<endl << password << endl << score;
+
+            file.close();
+
+            if (i < 9){ //condição para verificar se é a ultima jogada ou não
+                cout << endl << "Continue para a próxima pergunta!" << endl;
+                getch();
+                system("CLS");
+            }else{
+                cout << endl << "Terminou o jogo!" << endl;
+                getch();
+                system("CLS");
+            }
+        }else{
+            cout << endl << "Resposta errada!" << endl;
+            if(i < 9){
+                cout << endl << "Continue para a próxima pergunta!" << endl;
+                getch();
+                system("CLS");
+            }else{
+                cout << endl << "Terminou o jogo!" << endl;
+                getch();
+                system("CLS");
+            }
+        }
+    }
+}
+
+void jogoMusica(){
+    int opcao;
+
+    perguntas questao1;
+    questao1.pergunta = "Qual a principal música portuguesa?";
+    questao1.respostaCerta = "Fado";
+    questao1.respostaErrada1 = "Pimba";
+    questao1.respostaErrada2 = "Cânticos de missa nos altifalantes da festa popular local";
+    questao1.respostaErrada3 = "Funk brasileiro";
+
+    perguntas questao2;
+    questao2.pergunta = "Quem é a voz da popular banda ""Queen""?";
+    questao2.respostaCerta = "Freddy Mercury";
+    questao2.respostaErrada1 = "Isabel II";
+    questao2.respostaErrada2 = "Ricardo Mourão";
+    questao2.respostaErrada3 = "Quim Barreiros";
+
+
+    perguntas questao3;
+    questao3.pergunta = "Os beatles são um famoso grupo de...";
+    questao3.respostaCerta = "Músicos ingleses";
+    questao3.respostaErrada1 = "Escaravelhos";
+    questao3.respostaErrada2 = "Hippies";
+    questao3.respostaErrada3 = "Jogadores de Cricket profissional";
+
+    perguntas questao4;
+    questao4.pergunta = "Completa o título da música: ""All I want for Christmas is..."" ";
+    questao4.respostaCerta = "...you";
+    questao4.respostaErrada1 = "...a dog";
+    questao4.respostaErrada2 = "...death";
+    questao4.respostaErrada3 = "...global domination";
+    
+    perguntas questao5;
+    questao5.pergunta = "Completa o título da música: ""Smells like teen..."" ";
+    questao5.respostaCerta = "...spirit";
+    questao5.respostaErrada1 = "...angst";
+    questao5.respostaErrada2 = "...agers";
+    questao5.respostaErrada3 = "...ager mutant ninja turtles";
+
+    perguntas questao6;
+    questao6.pergunta = "A que artista pertence a música ""Billie Jean""?";
+    questao6.respostaCerta = "Michael Jackson";
+    questao6.respostaErrada1 = "Billie Eilish";
+    questao6.respostaErrada2 = "Bárbara Tinoco";
+    questao6.respostaErrada3 = "Miguel Jacques";
+
+    perguntas questao7;
+    questao7.pergunta = "Toy lançou em 2021 o melhor single de verão. Qual é?";
+    questao7.respostaCerta = "Verão e Amor (Cerveja no Congelador)";
+    questao7.respostaErrada1 = "Tá Turbinada";
+    questao7.respostaErrada2 = "Garagem da Vizinha";
+    questao7.respostaErrada3 = "Sonhos de Menino";
+
+    perguntas questao8;
+    questao8.pergunta = "Como se chama o popular instrumento português?";
+    questao8.respostaCerta = "Cavaquinho";
+    questao8.respostaErrada1 = "Ukelele";
+    questao8.respostaErrada2 = "Reco-reco";
+    questao8.respostaErrada3 = "Vuvuzela";
+
+    perguntas questao9;
+    questao9.pergunta = "O kpop é música pop com origem em que país?";
+    questao9.respostaCerta = "Coreia do Sul";
+    questao9.respostaErrada1 = "Coreia do Norte";
+    questao9.respostaErrada2 = "Kortugal";
+    questao9.respostaErrada3 = "Zimbabué";
+
+    perguntas questao10;
+    questao10.pergunta = "Que artista mandou o popular álbum ""Starboy""?";
+    questao10.respostaCerta = "The Weeknd";
+    questao10.respostaErrada1 = "The Manuel";
+    questao10.respostaErrada2 = "The Monday";
+    questao10.respostaErrada3 = "Patrick Star";
+
+    perguntas questao11;
+    questao11.pergunta = "A rapper e cantora Amala Dlamini é conhecida pelo nome de artista...";
+    questao11.respostaCerta = "Doja Cat";
+    questao11.respostaErrada1 = "Doja Cow";
+    questao11.respostaErrada2 = "Doja Dog";
+    questao11.respostaErrada3 = "Amália Rodrigues";
+
+    perguntas questao12;
+    questao12.pergunta = "A mixtape ""Guess who's back?"" pertence a que popular rapper americano?";
+    questao12.respostaCerta = "50 cent";
+    questao12.respostaErrada1 = "2 cent";
+    questao12.respostaErrada2 = "50 dolla";
+    questao12.respostaErrada3 = "1 euro e meio";
+
+    perguntas questao13;
+    questao13.pergunta = "Que artista foi aclamado/a como a ""voz de Portugal"" e obteve reconhecimento mundial?";
+    questao13.respostaCerta = "Amália Rodrigues";
+    questao13.respostaErrada1 = "Quim Barreiros";
+    questao13.respostaErrada2 = "D'ZRT";
+    questao13.respostaErrada3 = "Ricardo Mourão";
+
+    perguntas questao14;
+    questao14.pergunta = "Que instrumento é o artista Chico da Tina conhecido por usar?";
+    questao14.respostaCerta = "Concertina";
+    questao14.respostaErrada1 = "Cortina";
+    questao14.respostaErrada2 = "Palestina";
+    questao14.respostaErrada3 = "Critina";
+
+    perguntas questao15;
+    questao15.pergunta = "Qual é a banda de rock português mais bem sucedida?";
+    questao15.respostaCerta = "Xutos & Pontapés";
+    questao15.respostaErrada1 = "Socos & Murros";
+    questao15.respostaErrada2 = "Xutos & Remates";
+    questao15.respostaErrada3 = "Socos & Pontapés";
+
+    perguntas questao16;
+    questao16.pergunta = "Que artista de hiphip português é conhecido por títulos como ""Tou Bem"" e ""Água de Côco""?";
+    questao16.respostaCerta = "ProfJam";
+    questao16.respostaErrada1 = "ProfMario";
+    questao16.respostaErrada2 = "ProfZinho";
+    questao16.respostaErrada3 = "MrProf";
+
+    perguntas questao17;
+    questao17.pergunta = "Que artista atuou na Praça da Casa da Música, no passado S.João 2023?";
+    questao17.respostaCerta = "David Bruno";
+    questao17.respostaErrada1 = "Bruno David";
+    questao17.respostaErrada2 = "Sra Maria da Mercearia";
+    questao17.respostaErrada3 = "António";
+
+    perguntas questao18;
+    questao18.pergunta = "O cantor português José Malhoa, tem 5 filhos de quantas mulheres? ";
+    questao18.respostaCerta = "5";
+    questao18.respostaErrada1 = "1";
+    questao18.respostaErrada2 = "7";
+    questao18.respostaErrada3 = "0";
+
+    perguntas questao19;
+    questao19.pergunta = "Que artista português plagiou 11 músicas e resolveu o problema com doações?";
+    questao19.respostaCerta = "Tony Carreira";
+    questao19.respostaErrada1 = "Tony Carreira Criminal";
+    questao19.respostaErrada2 = "Tony Roubos de Menino";
+    questao19.respostaErrada3 = "Tony Descarrila";
+
+    perguntas questao20;
+    questao20.pergunta = "Sobre o que é a música ""Chico Fininho"" de Rui Veloso?";
+    questao20.respostaCerta = "Um consumidor frequente de drogas recreativas";
+    questao20.respostaErrada1 = "Um rapaz com sonhos de ser modelo";
+    questao20.respostaErrada2 = "Um miúdo inteligente chamado Francisco";
+    questao20.respostaErrada3 = "Um homem com problemas de saúde";
+
+    perguntas questao[20] = {questao1,questao2,questao3,questao4,questao5,questao6,questao7,questao8,questao9,questao10,questao11,questao12,questao13,questao14,questao15,questao16,questao17,questao18,questao19,questao20}; //Vetor do tipo perguntas que recebe as diferentes questões criadas
+    unsigned seed = chrono::system_clock::now().time_since_epoch().count(); 
+    shuffle(begin(questao), end(questao), default_random_engine(seed)); // o vetor que contém as questões é baralhado de modo a que as perguntas sejam feitas em ordem diferente de cada vez que se corre o jogo
+    for (int i = 0; i < 10; i++){ //loop que vai percorrer o vetor questao
+        questao[i].mostrarPergunta(opcao); //função mostrarpergunta executa a questão no indice i
+      
+        if (opcao == questao[i].indiceRespostaCorreta){ //condição para verificar resposta certa
+            cout << endl << "Parabens, esta certo!" << endl;
+            pontos += 5;
+        
+
+            ifstream read(email + ".txt"); 
+            getline(read, mail); 
+            getline(read, user); 
+            getline(read, pass); 
+            getline(read, score);
+
+            int score; 
+
+            pontostotais += pontos;
+ 	       
+            cout << "" << pontos;
+            
+            pontostotais = pontos;
+           
+            score = pontostotais;
+
+
+             ofstream file; 
+            file.open(email+ ".txt");
+
+            file << email << endl << username <<endl << password << endl << score;
+
+            file.close();
+
+            if (i < 9){ //condição para verificar se é a ultima jogada ou não
+                cout << endl << "Continue para a próxima pergunta!" << endl;
+                getch();
+                system("CLS");
+            }else{
+                cout << endl << "Terminou o jogo!" << endl;
+                getch();
+                system("CLS");
+            }
+        }else{
+            cout << endl << "Resposta errada!" << endl;
+            if(i < 9){
+                cout << endl << "Continue para a próxima pergunta!" << endl;
+                getch();
+                system("CLS");
+            }else{
+                cout << endl << "Terminou o jogo!" << endl;
+                getch();
+                system("CLS");
+            }
+        }
+    }
+}
+
+void jogoGeografia(){
+    int opcao;
+
+    perguntas questao1;
+    questao1.pergunta = "Qual a capital de Espanha?";
+    questao1.respostaCerta = "Madrid";
+    questao1.respostaErrada1 = "Belém";
+    questao1.respostaErrada2 = "México";
+    questao1.respostaErrada3 = "Arca d'Água";
+
+    perguntas questao2;
+    questao2.pergunta = "Onde fica localizado o Brasil?";
+    questao2.respostaCerta = "América do Sul";
+    questao2.respostaErrada1 = "África";
+    questao2.respostaErrada2 = "Rua dos Canaviais";
+    questao2.respostaErrada3 = "México";
+
+
+    perguntas questao3;
+    questao3.pergunta = "O Rio Nilo fica em que continente?";
+    questao3.respostaCerta = "Africano";
+    questao3.respostaErrada1 = "Asiático";
+    questao3.respostaErrada2 = "Rússia";
+    questao3.respostaErrada3 = "Europa";
+
+    perguntas questao4;
+    questao4.pergunta = "Quantos países fazem parte do Reino Unido?";
+    questao4.respostaCerta = "4";
+    questao4.respostaErrada1 = "2";
+    questao4.respostaErrada2 = "5";
+    questao4.respostaErrada3 = "Nenhum";
+    
+    perguntas questao5;
+    questao5.pergunta = "Qual é o maior país da América do Sul";
+    questao5.respostaCerta = "Brasil";
+    questao5.respostaErrada1 = "Perú";
+    questao5.respostaErrada2 = "Chad";
+    questao5.respostaErrada3 = "Estónia";
+
+    perguntas questao6;
+    questao6.pergunta = "A que país pertence a Gronelândia?";
+    questao6.respostaCerta = "Dinamarca";
+    questao6.respostaErrada1 = "Estados Unidos da América";
+    questao6.respostaErrada2 = "Canadá";
+    questao6.respostaErrada3 = "Portugal";
+
+    perguntas questao7;
+    questao7.pergunta = "Qual é o maior oceano do mundo?";
+    questao7.respostaCerta = "Pacífico";
+    questao7.respostaErrada1 = "Atlântico";
+    questao7.respostaErrada2 = "Copacabana";
+    questao7.respostaErrada3 = "Oceanário de Lisboa";
+
+    perguntas questao8;
+    questao8.pergunta = "Quantas ilhas constituem o arquipélago dos Açores?";
+    questao8.respostaCerta = "9";
+    questao8.respostaErrada1 = "8";
+    questao8.respostaErrada2 = "2";
+    questao8.respostaErrada3 = "33";
+
+    perguntas questao9;
+    questao9.pergunta = "Quantas ilhas constituem o arquipélado da Madeira?";
+    questao9.respostaCerta = "4";
+    questao9.respostaErrada1 = "3";
+    questao9.respostaErrada2 = "2";
+    questao9.respostaErrada3 = "A madeira é um arquipélago?";
+
+    perguntas questao10;
+    questao10.pergunta = "Qual é o maior rio de Portugal?";
+    questao10.respostaCerta = "Rio Tejo";
+    questao10.respostaErrada1 = "Rio Douro";
+    questao10.respostaErrada2 = "As lágrimas portuguesas quando o Porto perde em casa";
+    questao10.respostaErrada3 = "Rio Tinto";
+
+    perguntas questao11;
+    questao11.pergunta = "Entre que países se situa o monte Evereste?";
+    questao11.respostaCerta = "China e Nepal";
+    questao11.respostaErrada1 = "Nepal e Bangladesh";
+    questao11.respostaErrada2 = "Algures nos Pirinéus";
+    questao11.respostaErrada3 = "Ilha do Pico e Serra da Estrela";
+
+    perguntas questao12;
+    questao12.pergunta = "Qual a capital do Brasil?";
+    questao12.respostaCerta = "Brasília";
+    questao12.respostaErrada1 = "Rio de Janeiro";
+    questao12.respostaErrada2 = "Brigadeiros";
+    questao12.respostaErrada3 = "Rio Amazonas";
+
+    perguntas questao13;
+    questao13.pergunta = "Aproximadamente quantas ilhas formam o país do Japão?";
+    questao13.respostaCerta = "6000";
+    questao13.respostaErrada1 = "4";
+    questao13.respostaErrada2 = "Zero";
+    questao13.respostaErrada3 = "Pelo menos 1 e menos de 100";
+
+    perguntas questao14;
+    questao14.pergunta = "Qual o maior país do mundo?";
+    questao14.respostaCerta = "Rússia";
+    questao14.respostaErrada1 = "Portugal";
+    questao14.respostaErrada2 = "África";
+    questao14.respostaErrada3 = "União Europeia";
+
+    perguntas questao15;
+    questao15.pergunta = "Qual é o maior país africano?";
+    questao15.respostaCerta = "Argélia";
+    questao15.respostaErrada1 = "Wakanda";
+    questao15.respostaErrada2 = "Chad";
+    questao15.respostaErrada3 = "Djibouti";
+
+    perguntas questao16;
+    questao16.pergunta = "Qual o mais comum símbolo nacional dos EUA?";
+    questao16.respostaCerta = "Águia";
+    questao16.respostaErrada1 = "Cheeseburguer";
+    questao16.respostaErrada2 = "Glock 19";
+    questao16.respostaErrada3 = "Doenças Cardíacas";
+
+    perguntas questao17;
+    questao17.pergunta = "Em que continente se situa o país da Austrália?";
+    questao17.respostaCerta = "Oceania";
+    questao17.respostaErrada1 = "Austrália";
+    questao17.respostaErrada2 = "Península Ibérica";
+    questao17.respostaErrada3 = "Madeira";
+
+    perguntas questao18;
+    questao18.pergunta = "O que é o Equador?";
+    questao18.respostaCerta = "A linha imaginária que separa o planeta em Norte e Sul";
+    questao18.respostaErrada1 = "Um país no Brasil";
+    questao18.respostaErrada2 = "Um tratador de póneis";
+    questao18.respostaErrada3 = "Um primo afastado do cavalo";
+
+    perguntas questao19;
+    questao19.pergunta = "O Hawaii, embora um estado americano, pertence a que sub-região?";
+    questao19.respostaCerta = "Polinésia, na Oceânia";
+    questao19.respostaErrada1 = "Polinésia, no mar português";
+    questao19.respostaErrada2 = "Açores";
+    questao19.respostaErrada3 = "Índia";
+
+    perguntas questao20;
+    questao20.pergunta = "O que são os Países Baixos?";
+    questao20.respostaCerta = "A Holanda";
+    questao20.respostaErrada1 = "Os países do Antártico";
+    questao20.respostaErrada2 = "Ilhas australianas";
+    questao20.respostaErrada3 = "Países com população abaixo da média de altura";
 
     perguntas questao[20] = {questao1,questao2,questao3,questao4,questao5,questao6,questao7,questao8,questao9,questao10,questao11,questao12,questao13,questao14,questao15,questao16,questao17,questao18,questao19,questao20}; //Vetor do tipo perguntas que recebe as diferentes questões criadas
     unsigned seed = chrono::system_clock::now().time_since_epoch().count(); 
