@@ -125,10 +125,14 @@ int deleteconta(){ // Delete de conta
 
     deleteconta = remove(delEmail); //CUIDADO isto faz dele de qualquer ficheiro se o nome for inserido coretamente.
     if(deleteconta == 0){
-      cout << "\n File Delete Successfuly!";
+      cout << "\n Conta deletada com sucesso!\n";
     } else {
-      cout << "\n Error Noa deletado";
+      cout << "\n Error conta nao deletada";
     }
+    cout <<"Pressione qualquer tecla para voltar ao menu principal";
+    getch();
+    
+    system ("CLS");
    // Volta para o menu de utilizador devia voltar ao menu principal.
    return 0;
    }
