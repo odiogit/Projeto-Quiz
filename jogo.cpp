@@ -187,11 +187,11 @@ void jogoVideojogos(){
     perguntas questao[3] = {questao1,questao2,questao3}; //Vetor do tipo perguntas que recebe as diferentes questões criadas
     unsigned seed = chrono::system_clock::now().time_since_epoch().count(); 
     shuffle(begin(questao), end(questao), default_random_engine(seed)); // o vetor que contém as questões é baralhado de modo a que as perguntas sejam feitas em ordem diferente de cada vez que se corre o jogo
-    for (int i = 0; i < 3; i++){ //loop que vai percorrer o vetor questao
+    for (int i = 0; i < 10; i++){ //loop que vai percorrer o vetor questao
         questao[i].mostrarPergunta(opcao); //função mostrarpergunta executa a questão no indice i
         if (opcao == questao[i].indiceRespostaCorreta){ //condição para verificar resposta certa
             cout << endl << "Parabens, esta certo!" << endl;
-            if (i < 2){ //condição para verificar se é a ultima jogada ou não
+            if (i < 9){ //condição para verificar se é a ultima jogada ou não
                 cout << endl << "Continue para a próxima pergunta!" << endl;
                 getch();
                 system("CLS");
@@ -202,7 +202,7 @@ void jogoVideojogos(){
             }
         }else{
             cout << endl << "Resposta errada!" << endl;
-            if(i < 2){
+            if(i < 9){
                 cout << endl << "Continue para a próxima pergunta!" << endl;
                 getch();
                 system("CLS");
