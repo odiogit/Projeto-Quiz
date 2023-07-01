@@ -10,9 +10,12 @@
 #include <stdlib.h>
 #include <locale.h>   
 #include <conio.h>
+#include <fstream>
 
 using namespace std;
 
+int pontostotais = 0;
+int pontos;
 struct perguntas{
 
     string pergunta;
@@ -189,8 +192,36 @@ void jogoVideojogos(){
     shuffle(begin(questao), end(questao), default_random_engine(seed)); // o vetor que contém as questões é baralhado de modo a que as perguntas sejam feitas em ordem diferente de cada vez que se corre o jogo
     for (int i = 0; i < 10; i++){ //loop que vai percorrer o vetor questao
         questao[i].mostrarPergunta(opcao); //função mostrarpergunta executa a questão no indice i
+      
         if (opcao == questao[i].indiceRespostaCorreta){ //condição para verificar resposta certa
             cout << endl << "Parabens, esta certo!" << endl;
+            pontos += 5;
+        
+
+            ifstream read(email + ".txt"); 
+            getline(read, mail); 
+            getline(read, user); 
+            getline(read, pass); 
+            getline(read, score);
+
+            int score; 
+
+            pontostotais += pontos;
+ 	       
+            cout << "" << pontos;
+            
+            pontostotais = pontos;
+           
+            score = pontostotais;
+
+
+             ofstream file; 
+            file.open(email+ ".txt");
+
+            file << email << endl << username <<endl << password << endl << score;
+
+            file.close();
+
             if (i < 9){ //condição para verificar se é a ultima jogada ou não
                 cout << endl << "Continue para a próxima pergunta!" << endl;
                 getch();
