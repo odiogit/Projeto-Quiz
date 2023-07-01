@@ -34,10 +34,10 @@ Características adicionais do Projeto (opcional)
 Cada uma destas características adicionais implementadas, valerão mais pontos 
 à nota final do projeto:
 1. Tempo limite de resposta (+5 pontos)
-2. Eliminar conta (+5 pontos)
-3. Reset de pontuação (+5 pontos)
+2. Eliminar conta (+5 pontos)- Nao esta bem implementado.
+3. Reset de pontuação (+5 pontos) FEITO
 4. Adicionar 3 níveis de dificuldade (+10 pontos)
-5. Recuperação de Password (+5 pontos)
+5. Recuperação de Password (+5 pontos) - A fazer.
 6. Tabela de líderes (+ 5 pontos)
 
  # Projeto Quiz

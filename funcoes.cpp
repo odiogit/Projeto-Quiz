@@ -4,10 +4,12 @@
 #include <conio.h>
 #include <fstream>
 
+
 using namespace std;
 
 string username, password, email, score;
 string user, pass, mail;
+
 int erro = 0;
 int resertscore = 0;
 
@@ -26,13 +28,17 @@ cout <<"Criar Conta" << endl;
                 cout <<"Escolha uma PASSWORD: ";
                 cin >> password;
 
+                
+
+
+
                    int score = 0; 
 
                   ofstream file; //ofstream creates a file
 
                      file.open(email+ ".txt");
 
-                     file << email << endl << username <<endl << password << endl << score;
+                     file << email << endl << username <<endl << password << endl << score << endl;
 
                      file.close();
 
@@ -83,16 +89,48 @@ void regras(){
 
 
 
- void resetscore(){
-   
-   int score = 0;
+void resetscore(){
 
-   ofstream file; //ofstream creates a file
-   file.open(email+ ".txt");
+   int resetscore; 
 
-   file << email << endl << username <<endl << password << endl << score;
+      cout << "[1] - Reset de pontuação"<< endl << "[2] - Voltar atraz"<< endl;
+      cin >> resertscore;
 
-   file.close();
+         if (resertscore == 1){
+            cout << "Score resetado" << endl;
+            getch();
+
+            int score = 0;
+
+            ofstream file; //ofstream creates a file
+            file.open(email+ ".txt");
+
+            file << email << endl << username <<endl << password << endl << score;
+
+            file.close();
+               } else {
+                  cout << "Score nao resetado!! " << endl << "Presione qualquer tecla para continuar";
+                  getch();
+   }
+   }
+
+
+
+int deleteconta(){ // Delete de conta
+
+   int deleteconta;
+   char delEmail[20];
+   cout <<"Insira o seu email incluindo .txt no fim : "; // So faz dele da conta se no fim for inserido .txt
+   cin >>delEmail;
+
+    deleteconta = remove(delEmail); //CUIDADO isto faz dele de qualquer ficheiro se o nome for inserido coretamente.
+    if(deleteconta == 0){
+      cout << "\n File Delete Successfuly!";
+    } else {
+      cout << "\n Error Noa deletado";
+    }
+   // Volta para o menu de utilizador devia voltar ao menu principal.
+   return 0;
+   }
+  
    
-   
- }
