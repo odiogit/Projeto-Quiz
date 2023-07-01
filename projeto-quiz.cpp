@@ -4,6 +4,7 @@
 #include <conio.h>
 #include "funcoes.cpp"
 #include "menus.cpp"
+#include "jogo.cpp"
 
 using namespace std;
  int escolhaPrincipal;
@@ -36,27 +37,33 @@ do{
                         menuJogo();
                         cin >> escolhaJogo;
                         switch (escolhaJogo){
-                            case 1:
+                             case 1:
                                 system("CLS");
-                                menuTemas();
+                                int escolhaTema;
+                                do{
+                                    menuTemas();
+                                    cin >> escolhaTema;
+                                    switch(escolhaTema){
+                                        case 1:
+                                        system("CLS");
+                                        jogo();
+                                        break;
+                                    }
+                                }while(escolhaTema < 1 || escolhaTema > 3);
                                 break;
                             case 2:
                                 system("CLS");
                                 regras();
                                 break;
-
                             case 3:
                                 system("CLS");
-                                
                                 resetscore();
                                 break;
                             case 4:
-                                
                                 system("CLS");
                                 deleteconta();
                                 escolhaJogo = 5;
                                 break;
-                            
                             case 5:
                                 system("CLS");
                                 break;
