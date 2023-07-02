@@ -14,7 +14,8 @@ void bemVindo(){
 void menuPrincipal (){
     cout << "[1] - Sign In" << endl;
     cout << "[2] - Login" << endl;
-    cout << "[3] - Sair" << endl;
+    cout << "[3] - Recuperação de conta"<< endl;
+    cout << "[4] - Sair" << endl;
 }
 void menuJogo (){
     

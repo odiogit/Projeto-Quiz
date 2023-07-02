@@ -94,6 +94,10 @@ do{
             break;
         case 3:
             system("CLS");
+            recup();
+            break;
+        case 4:
+            system("CLS");
                 adeus();
             break;
         default:
@@ -102,5 +106,5 @@ do{
             getch();
             system("CLS");
     }
-}while(escolhaPrincipal != 3);
+}while(escolhaPrincipal != 4);
 }

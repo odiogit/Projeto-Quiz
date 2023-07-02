@@ -3,17 +3,29 @@
 #include <locale.h>
 #include <conio.h>
 #include <fstream>
-
+#include <time.h>
 
 using namespace std;
 
-string username, password, email, score;
+string username, password, email, score , random;
 string user, pass, mail;
 
 int erro = 0;
 int resertscore = 0;
 
 int registracao(){
+
+// Providing a seed value
+	srand((unsigned) time(NULL));
+
+	// Get a random number
+	int random = rand();
+
+	// Print the random number
+	
+
+
+
    cout << " ------------------ " << endl;
    cout << "|   Criar Conta    |" << endl;
    cout << " ------------------ " << endl;
@@ -30,13 +42,18 @@ int registracao(){
    cout <<"Escolha uma PASSWORD: ";
    cin >> password;
 
+   // Print the random number
+   cout << "Codigo de recuperação "<< random << endl;
+   
+
+
    int score = 0; 
 
    ofstream file; //ofstream creates a file
 
    file.open(email+ ".txt");
 
-   file << email << endl << username <<endl << password << endl << score << endl;
+   file << email << endl << username <<endl << password << endl << score << endl << random;
    
    file.close();
 
@@ -121,14 +138,38 @@ void resetscore(){
 int deleteconta(){ // Delete de conta
 
    int deleteconta;
-   char delEmail[20];
+   
    cout << "Está a apagar a sua conta e qualquer pontuação que tenha guardada" << endl;
-   cout <<"> Insira o seu email incluindo .txt no fim para continuar: "; // So faz delete da conta se no fim for inserido .txt
-   cin >>delEmail;
+   cout << "[1] - Apagar conta" << endl << " [2] - Voltar " << endl;
+   cin >>deleteconta;
 
-    deleteconta = remove(delEmail); //CUIDADO isto faz delete de qualquer ficheiro se o nome for inserido corretamente.
-    if(deleteconta == 0){
+
+
+     
+    if(deleteconta == 1){
       cout << "\n> Conta apagada com sucesso!\n";
+      
+
+      ifstream read(email + ".txt"); 
+      getline(read, mail); 
+      getline(read, user); 
+      getline(read, pass); 
+      getline(read, score);
+
+      
+
+      int username = 666999;
+      int password = 5356732;
+      
+      ofstream file; //ofstream creates a file
+
+            file.open(email+ ".txt");
+
+            file << email << endl << username <<endl << password << endl << score;
+
+            file.close();
+
+
     } else {
       cout << "\n> ERRO! Conta não apagada";
     }
@@ -140,4 +181,56 @@ int deleteconta(){ // Delete de conta
    return 0;
    }
   
-   
+int recup(){
+  
+
+  ifstream read(email + ".txt"); 
+      getline(read, mail); 
+      getline(read, user); 
+      getline(read, pass); 
+      getline(read, score);
+      getline(read, random);
+
+      string recup;
+      cout <<"Insira o seu email: ";
+      cin >> mail;
+      cout << "Insira o seu codigo de recuperação:";
+      cin >> recup;
+
+
+     
+      
+      if (mail == email && recup == random){
+
+         system ("CLS"); 
+
+            cout<<"Insira o seu novo nome: ";
+            cin >> username;
+
+            cout<< "Insira a sua nova password: ";
+            cin >> password;
+
+
+            ofstream file; //ofstream creates a file
+
+            file.open(email+ ".txt");
+
+            file << email << endl << username <<endl << password << endl << score << endl << random;
+
+            file.close();
+
+            getch();
+            system ("CLS");
+
+      }else{  
+
+         cout << "Nao recuperado"; 
+
+         getch();
+         system ("CLS");
+}
+
+
+   getch();
+   system ("CLS");
+}
