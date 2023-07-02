@@ -66,7 +66,7 @@ bool login(){
    setlocale(LC_ALL,"");
 
    cout << " --------------------- " << endl;
-   cout << "|   Iniciar Sessão    |" << endl;
+   cout << "|   Iniciar Sessao    |" << endl;
    cout << " --------------------- " << endl;
    cout << endl;
 
@@ -97,13 +97,13 @@ void regras(){
    cout << "|       Regras:      |" << endl;
    cout << " -------------------- " << endl;
    cout << endl;
-   cout << "Neste Quiz vai testar o seu conhecimento em três tópicos: Videojogos, Música e Geografia." << endl;
-   cout << "Para iniciar o jogo deve escolher a opção [JOGAR] no menú de jogo, e de seguida escolher o seu tema, pressionando [1 -], [2] ou [3]." << endl;
-   cout << "Irá receber 10 perguntas pertinentes à sua área de conhecimento selecionada, cada uma com 4 possíveis opções de resposta." << endl;
-   cout << "Para responder precisa apenas de selecionar o número correspondente à resposta que deseja." << endl;
-   cout << "Os seus pontos serão automaticamente adicionados caso escolha a resposta correta, caso contrário irão manter-se inalterados." << endl;
-   cout << "No final das 10 questões poderá escolher jogar novamente para continuar a somar à sua pontuação e experimentar os restantes temas." << endl;
-   cout << endl << "Pressione qualquer tecla para voltar ao menú..." << endl;
+   cout << "Neste Quiz vai testar o seu conhecimento em tres topicos: Videojogos, Musica e Geografia." << endl;
+   cout << "Para iniciar o jogo deve escolher a opcao [JOGAR] no menu de jogo, e de seguida escolher o seu tema, pressionando [1 -], [2] ou [3]." << endl;
+   cout << "Ira receber 10 perguntas pertinentes a sua area de conhecimento selecionada, cada uma com 4 possiveis opcoes de resposta." << endl;
+   cout << "Para responder precisa apenas de selecionar o numero correspondente a resposta que deseja." << endl;
+   cout << "Os seus pontos serao automaticamente adicionados caso escolha a resposta correta, caso contrario irao manter-se inalterados." << endl;
+   cout << "No final das 10 questoes podera escolher jogar novamente para continuar a somar a sua pontuacao e experimentar os restantes temas." << endl;
+   cout << endl << "Pressione qualquer tecla para voltar ao menu..." << endl;
    getch();
    system("CLS");
  }
@@ -112,8 +112,9 @@ void resetscore(){
 
    int resertscore; 
 
-      cout << "Tem a certeza que deseja retornar a sua pontuação a zero?" << endl;
-      cout << endl << "[1] - SIM: Reiniciar a pontuação"<< endl << "[2] - NÃO: Voltar atrás"<< endl;
+      cout << "Tem a certeza que deseja retornar a sua pontuacao a zero?" << endl;
+      cout << endl << "[1] - SIM: Reiniciar a pontuacao"<< endl;
+      cout << "[2] - NAO: Voltar atras"<< endl;
       cin >> resertscore;
 
          if (resertscore == 1){
@@ -130,7 +131,7 @@ void resetscore(){
 
             file.close();
          } else {
-            cout << "> Score não alterado! " << endl << "Pressione qualquer tecla para voltar...";
+            cout << "> Score nao alterado! " << endl << "Pressione qualquer tecla para voltar...";
             getch();
             system("CLS");
          }
@@ -140,8 +141,8 @@ int deleteconta(){ // Delete de conta
 
    int deleteconta;
    
-   cout << "Está a apagar a sua conta e qualquer pontuação que tenha guardada" << endl;
-   cout << "[1] - Apagar conta" << endl << " [2] - Voltar " << endl;
+   cout << "Esta a apagar a sua conta e qualquer pontuacao que tenha guardada" << endl;
+   cout << "[1] - Apagar conta" << endl << "[2] - Voltar " << endl;
    cin >>deleteconta;
 
 
@@ -172,9 +173,9 @@ int deleteconta(){ // Delete de conta
 
 
     } else {
-      cout << "\n> ERRO! Conta não apagada";
+      cout << "\n> ERRO! Conta nao apagada";
     }
-    cout <<"\nPressione qualquer tecla para voltar ao menú principal...";
+    cout <<"\nPressione qualquer tecla para voltar ao menu principal...";
     getch();
     
     system ("CLS");
@@ -195,7 +196,7 @@ int recup(){
       string recup;
       cout <<"Insira o seu email: ";
       cin >> mail;
-      cout << "Insira o seu codigo de recuperação:";
+      cout << "Insira o seu codigo de recuperacao:";
       cin >> recup;
 
 
@@ -229,9 +230,10 @@ int recup(){
 
          getch();
          system ("CLS");
-}
+      }
 
 
    
    system ("CLS");
+   return 10;
 }
