@@ -44,6 +44,7 @@ struct perguntas{
 void jogoVideojogos(){
 
     int opcao;
+    int scoreRonda = 0;
 
     perguntas questao1;
     questao1.pergunta = "Em que ano lançou a Nintendo o jogo Pokémon?";
@@ -207,9 +208,11 @@ void jogoVideojogos(){
 
             scoreTotal += 5;
 
+            scoreRonda += 5;
+
             score = to_string(scoreTotal); //conversão de int para string para poder guardar o score atualizado no ficheiro txt
 
-            cout << "A sua pontuação: " << score << endl;
+            cout << "A sua pontuação: " << scoreRonda << endl;
 
             ofstream file; 
             file.open(email+ ".txt");
@@ -223,7 +226,7 @@ void jogoVideojogos(){
                 getch();
                 system("CLS");
             }else{
-                cout << endl << "Terminou o jogo!" << endl;
+                cout << endl << "Terminou o jogo!" << endl << "Fizeste " << scoreRonda << " pontos nesta ronda!" << endl;
                 getch();
                 system("CLS");
             }
@@ -234,7 +237,7 @@ void jogoVideojogos(){
                 getch();
                 system("CLS");
             }else{
-                cout << endl << "Terminou o jogo!" << endl;
+                cout << endl << "Terminou o jogo!" << endl << "Fizeste " << scoreRonda << " pontos nesta ronda!" << endl;
                 getch();
                 system("CLS");
             }
@@ -244,6 +247,7 @@ void jogoVideojogos(){
 
 void jogoMusica(){
     int opcao;
+    int scoreRonda = 0;
 
     perguntas questao1;
     questao1.pergunta = "Qual a principal música portuguesa?";
@@ -406,9 +410,11 @@ void jogoMusica(){
 
             scoreTotal += 5;
 
+            scoreRonda +=5;
+
             score = to_string(scoreTotal); //conversão de int para string para poder guardar o score atualizado no ficheiro txt
 
-            cout << "A sua pontuação: " << score << endl;
+            cout << "A sua pontuação: " << scoreRonda << endl;
 
             ofstream file; 
             file.open(email+ ".txt");
@@ -422,7 +428,7 @@ void jogoMusica(){
                 getch();
                 system("CLS");
             }else{
-                cout << endl << "Terminou o jogo!" << endl;
+                cout << endl << "Terminou o jogo!" << endl << "Fizeste " << scoreRonda << " pontos nesta ronda!" << endl;
                 getch();
                 system("CLS");
             }
@@ -433,7 +439,7 @@ void jogoMusica(){
                 getch();
                 system("CLS");
             }else{
-                cout << endl << "Terminou o jogo!" << endl;
+                cout << endl << "Terminou o jogo!" << endl << "Fizeste " << scoreRonda << " pontos nesta ronda!" << endl;
                 getch();
                 system("CLS");
             }
@@ -443,6 +449,7 @@ void jogoMusica(){
 
 void jogoGeografia(){
     int opcao;
+    int scoreRonda = 0;
 
     perguntas questao1;
     questao1.pergunta = "Qual a capital de Espanha?";
@@ -606,9 +613,11 @@ void jogoGeografia(){
 
             scoreTotal += 5;
 
+            scoreRonda += 5;
+
             score = to_string(scoreTotal); //conversão de int para string para poder guardar o score atualizado no ficheiro txt
 
-            cout << "A sua pontuação: " << score << endl;
+            cout << "A sua pontuação: " << scoreRonda << endl;
 
             ofstream file; 
             file.open(email+ ".txt");
@@ -622,7 +631,7 @@ void jogoGeografia(){
                 getch();
                 system("CLS");
             }else{
-                cout << endl << "Terminou o jogo!" << endl;
+                cout << endl << "Terminou o jogo!" << endl << "Fizeste " << scoreRonda << " pontos nesta ronda!" << endl;
                 getch();
                 system("CLS");
             }
@@ -633,7 +642,7 @@ void jogoGeografia(){
                 getch();
                 system("CLS");
             }else{
-                cout << endl << "Terminou o jogo!" << endl;
+                cout << endl << "Terminou o jogo!" << endl << "Fizeste " << scoreRonda << " pontos nesta ronda!" << endl;
                 getch();
                 system("CLS");
             }
