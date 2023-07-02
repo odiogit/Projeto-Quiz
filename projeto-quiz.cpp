@@ -86,7 +86,7 @@ do{
                         }
                     }while(escolhaJogo != 5);
                 }else{
-                    cout << "> LOGIN INVÁLIDO, CONTA TERMINADA!" << endl;
+                    cout << "> LOGIN INVÁLIDO" << endl;
                     cout << endl << "Pressione qualquer tecla para voltar ao menú..." << endl;
                     getch();
                     system("CLS");

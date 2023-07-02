@@ -53,6 +53,8 @@ void adeus (){
     cout << "|       Obrigada por jogar!     |" << endl;
     cout << " ------------------------------- " << endl;
     cout << endl << "Pressione qualquer tecla para sair..." <<endl;
+    cout << endl << "Projeto feito por Diogo, Helena, Leonardo" <<endl;
+     cout << endl << ";3 Adeus" <<endl;
     getch();
     system("CLS");
 }
