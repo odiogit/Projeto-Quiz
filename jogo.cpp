@@ -359,7 +359,7 @@ void jogoMusica(){
     questao15.respostaErrada3 = "Socos & Pontapés";
 
     perguntas questao16;
-    questao16.pergunta = "Que artista de hiphip português é conhecido por títulos como ""Tou Bem"" e ""Água de Côco""?";
+    questao16.pergunta = "Que artista de hip hop português é conhecido por títulos como ""Tou Bem"" e ""Água de Côco""?";
     questao16.respostaCerta = "ProfJam";
     questao16.respostaErrada1 = "ProfMario";
     questao16.respostaErrada2 = "ProfZinho";
