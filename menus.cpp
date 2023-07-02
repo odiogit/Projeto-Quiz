@@ -54,7 +54,7 @@ void adeus (){
     cout << " ------------------------------- " << endl;
     cout << endl << "Pressione qualquer tecla para sair..." <<endl;
     cout << endl << "Projeto feito por Diogo, Helena, Leonardo" <<endl;
-     cout << endl << ";3 Adeus" <<endl;
+     cout << endl << " (U w U *)/ Adeus" <<endl;
     getch();
     system("CLS");
 }
