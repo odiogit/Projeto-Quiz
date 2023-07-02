@@ -203,6 +203,7 @@ void jogoVideojogos(){
             getline(read, user); 
             getline(read, pass); 
             getline(read, score); 
+            getline(read, random);
 
             int scoreTotal = stoi(score); //conversão de string para int para podermos alterar o score como sendo um numero
 
@@ -217,7 +218,7 @@ void jogoVideojogos(){
             ofstream file; 
             file.open(email+ ".txt");
 
-            file << email << endl << username <<endl << password << endl << score;
+            file << email << endl << username <<endl << password << endl << score << endl << random;
 
             file.close();
 
@@ -405,7 +406,7 @@ void jogoMusica(){
             getline(read, user); 
             getline(read, pass); 
             getline(read, score);
-
+            getline(read, random);
             int scoreTotal = stoi(score); //conversão de string para int para podermos alterar o score como sendo um numero
 
             scoreTotal += 5;
@@ -419,7 +420,7 @@ void jogoMusica(){
             ofstream file; 
             file.open(email+ ".txt");
 
-            file << email << endl << username <<endl << password << endl << score;
+            file << email << endl << username <<endl << password << endl << score << endl << random;
 
             file.close();
 
@@ -608,7 +609,7 @@ void jogoGeografia(){
             getline(read, user); 
             getline(read, pass); 
             getline(read, score);
-
+            getline(read, random);
             int scoreTotal = stoi(score); //conversão de string para int para podermos alterar o score como sendo um numero
 
             scoreTotal += 5;
@@ -622,7 +623,7 @@ void jogoGeografia(){
             ofstream file; 
             file.open(email+ ".txt");
 
-            file << email << endl << username <<endl << password << endl << score;
+            file << email << endl << username <<endl << password << endl << score << endl << random;
 
             file.close();
 

@@ -84,6 +84,7 @@ bool login(){
    getline(read, user); 
    getline(read, pass); 
    getline(read, score);
+   getline(read, random);
       if ( user == username && pass == password && mail == email){
          return true;
       }else {
@@ -125,7 +126,7 @@ void resetscore(){
             ofstream file; //ofstream creates a file
             file.open(email+ ".txt");
 
-            file << email << endl << username <<endl << password << endl << score;
+            file << email << endl << username <<endl << password << endl << score << endl << random;
 
             file.close();
          } else {
@@ -155,7 +156,7 @@ int deleteconta(){ // Delete de conta
       getline(read, user); 
       getline(read, pass); 
       getline(read, score);
-
+      getline(read, random);
       
 
       int username = 666999;
@@ -163,9 +164,9 @@ int deleteconta(){ // Delete de conta
       
       ofstream file; //ofstream creates a file
 
-            file.open(email+ ".txt");
+            file.open(email + ".txt");
 
-            file << email << endl << username <<endl << password << endl << score;
+            file << email << endl << username <<endl << password << endl << score << endl << random;
 
             file.close();
 
@@ -219,7 +220,7 @@ int recup(){
 
             file.close();
 
-            getch();
+           getch();
             system ("CLS");
 
       }else{  
@@ -231,6 +232,6 @@ int recup(){
 }
 
 
-   getch();
+   
    system ("CLS");
 }
