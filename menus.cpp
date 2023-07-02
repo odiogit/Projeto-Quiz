@@ -24,6 +24,10 @@ void menuJogo (){
     getline(read, pass); //reads the password
     getline(read, score);
 
+    cout << " ------------------------------ " << endl;
+    cout << "|          Menú de Jogo        |" << endl;
+    cout << " ------------------------------ " << endl;
+    cout << endl;
     cout << "> utilizador: " << username << "   > pontuação: " << score << endl;
     cout << endl;
     cout << "[1] - Jogar" << endl;
@@ -33,17 +37,21 @@ void menuJogo (){
     cout << "[5] - Voltar atrás" << endl;
 }
 void menuTemas(){
+
+        cout << " ------------------ "<< endl;
+        cout << "| Seleção de Temas |" << endl;
+        cout << " ------------------ "<< endl << endl;
         cout << "[1] - Videojogos" << endl;
         cout << "[2] - Música" << endl;
         cout << "[3] - Geografia" << endl;
-        cout << "Escolha o tema: " << endl;
+        cout << "Escolha o tema das suas perguntas: " << endl;
 }
 void adeus (){
     cout << endl;
     cout << " ------------------------------- " << endl;
     cout << "|       Obrigada por jogar!     |" << endl;
     cout << " ------------------------------- " << endl;
-    cout << endl << "> pressione qualquer tecla para sair ......" <<endl;
+    cout << endl << "Pressione qualquer tecla para sair..." <<endl;
     getch();
     system("CLS");
 }

@@ -26,8 +26,9 @@ do{
         case 2:
             system("CLS");
                 if(login() == true){//Validação para login
-                    cout << "\n > Boas vindas " << username << "!" << endl;
-                    cout << "Pressione qualquer tecla para JOGAR" << endl;
+                    cout << endl;
+                    cout << "> Boas vindas novamente " << username << "!" << endl;
+                    cout << endl << "Pressione qualquer tecla para JOGAR" << endl;
                     getch();
                     system("CLS");
                     int escolhaJogo;
@@ -74,16 +75,16 @@ do{
                                 system("CLS");
                                 break;
                             default:
-                                cout << "Selecione uma opção válida" << endl;
-                                cout << "Pressione qualquer tecla para continuar...." << endl;
+                                cout << "> ERRO! Selecione uma opção válida" << endl;
+                                cout << "Pressione qualquer tecla para continuar..." << endl;
                                 getch();
                                 system("CLS");
                                 break;
                         }
                     }while(escolhaJogo != 5);
                 }else{
-                    cout << "LOGIN INVÁLIDO, CONTA TERMINADA!" << endl;
-                    cout << "PRESSIONE PARA VOLTAR AO MENU!" << endl;
+                    cout << "> LOGIN INVÁLIDO, CONTA TERMINADA!" << endl;
+                    cout << endl << "Pressione qualquer tecla para voltar ao menú..." << endl;
                     getch();
                     system("CLS");
                 }
@@ -94,7 +95,7 @@ do{
             break;
         default:
             cout << " > ESCOLHA INVÁLIDA" << endl;
-            cout << "> pressione qualquer tecla......" <<endl;
+            cout << "Pressione qualquer tecla para continuar..." <<endl;
             getch();
             system("CLS");
     }

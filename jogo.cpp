@@ -38,7 +38,7 @@ struct perguntas{
                 indiceRespostaCorreta = i + 1;
             }
         }
-        cout << "Escolha uma opção (1-4): ";
+        cout << "Selecione a sua resposta: ";
         cin >> opcao;
     }
 };
@@ -195,8 +195,10 @@ void jogoVideojogos(){
         questao[i].mostrarPergunta(opcao); //função mostrarpergunta executa a questão no indice i
       
         if (opcao == questao[i].indiceRespostaCorreta){ //condição para verificar resposta certa
-            cout << endl << "Parabens, esta certo!" << endl;
+            cout << endl << "Parabéns, escolheu corretamente!" << endl;
+            cout << "A sua pontuação:" << endl;
             pontos += 5;
+            cout << endl;
         
 
             ifstream read(email + ".txt"); 
@@ -224,7 +226,7 @@ void jogoVideojogos(){
             file.close();
 
             if (i < 9){ //condição para verificar se é a ultima jogada ou não
-                cout << endl << "Continue para a próxima pergunta!" << endl;
+                cout << endl << endl << "Continue para a próxima pergunta!" << endl;
                 getch();
                 system("CLS");
             }else{
@@ -398,9 +400,10 @@ void jogoMusica(){
         questao[i].mostrarPergunta(opcao); //função mostrarpergunta executa a questão no indice i
       
         if (opcao == questao[i].indiceRespostaCorreta){ //condição para verificar resposta certa
-            cout << endl << "Parabens, esta certo!" << endl;
+            cout << endl << "Parabéns, escolheu corretamente!" << endl;
+            cout << "A sua pontuação: " << endl;
             pontos += 5;
-        
+            cout << endl;
 
             ifstream read(email + ".txt"); 
             getline(read, mail); 
@@ -427,7 +430,7 @@ void jogoMusica(){
             file.close();
 
             if (i < 9){ //condição para verificar se é a ultima jogada ou não
-                cout << endl << "Continue para a próxima pergunta!" << endl;
+                cout << endl << endl << "Continue para a próxima pergunta!" << endl;
                 getch();
                 system("CLS");
             }else{
@@ -601,8 +604,10 @@ void jogoGeografia(){
         questao[i].mostrarPergunta(opcao); //função mostrarpergunta executa a questão no indice i
       
         if (opcao == questao[i].indiceRespostaCorreta){ //condição para verificar resposta certa
-            cout << endl << "Parabens, esta certo!" << endl;
+            cout << endl << "Parabéns, escolheu corretamente!" << endl;
+            cout << "A sua pontuação: " << endl;
             pontos += 5;
+            cout << endl;
         
 
             ifstream read(email + ".txt"); 
@@ -630,7 +635,7 @@ void jogoGeografia(){
             file.close();
 
             if (i < 9){ //condição para verificar se é a ultima jogada ou não
-                cout << endl << "Continue para a próxima pergunta!" << endl;
+                cout << endl << endl << "Continue para a próxima pergunta!" << endl;
                 getch();
                 system("CLS");
             }else{
