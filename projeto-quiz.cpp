@@ -44,17 +44,20 @@ do{
                                     cin >> escolhaTema;
                                     switch(escolhaTema){
                                         case 1:
-                                        system("CLS");
-                                        jogoVideojogos();
-                                        break;
+                                            system("CLS");
+                                            jogoVideojogos();
+                                            break;
                                         case 2:
-                                        system("CLS");
-                                        jogoMusica();
-                                        break;
+                                            system("CLS");
+                                            jogoMusica();
+                                            break;
                                         case 3:
-                                        system("CLS");
-                                        jogoGeografia();
-                                        break;
+                                            system("CLS");
+                                            jogoGeografia();
+                                            break;
+                                        default:
+                                            system("CLS");
+                                            break;
                                     }
                                 }while(escolhaTema < 1 || escolhaTema > 3);
                                 break;

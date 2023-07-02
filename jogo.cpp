@@ -14,8 +14,6 @@
 
 using namespace std;
 
-int pontostotais = 0;
-int pontos;
 struct perguntas{
 
     string pergunta;
@@ -196,8 +194,6 @@ void jogoVideojogos(){
       
         if (opcao == questao[i].indiceRespostaCorreta){ //condição para verificar resposta certa
             cout << endl << "Parabéns, escolheu corretamente!" << endl;
-            cout << "A sua pontuação:" << endl;
-            pontos += 5;
             cout << endl;
         
 
@@ -205,20 +201,17 @@ void jogoVideojogos(){
             getline(read, mail); 
             getline(read, user); 
             getline(read, pass); 
-            getline(read, score);
+            getline(read, score); 
 
-            int score; 
+            int scoreTotal = stoi(score); //conversão de string para int para podermos alterar o score como sendo um numero
 
-            pontostotais += pontos;
- 	       
-            cout << "" << pontos;
-            
-            pontostotais = pontos;
-           
-            score = pontostotais;
+            scoreTotal += 5;
 
+            score = to_string(scoreTotal); //conversão de int para string para poder guardar o score atualizado no ficheiro txt
 
-             ofstream file; 
+            cout << "A sua pontuação: " << score << endl;
+
+            ofstream file; 
             file.open(email+ ".txt");
 
             file << email << endl << username <<endl << password << endl << score;
@@ -401,8 +394,6 @@ void jogoMusica(){
       
         if (opcao == questao[i].indiceRespostaCorreta){ //condição para verificar resposta certa
             cout << endl << "Parabéns, escolheu corretamente!" << endl;
-            cout << "A sua pontuação: " << endl;
-            pontos += 5;
             cout << endl;
 
             ifstream read(email + ".txt"); 
@@ -411,18 +402,15 @@ void jogoMusica(){
             getline(read, pass); 
             getline(read, score);
 
-            int score; 
+            int scoreTotal = stoi(score); //conversão de string para int para podermos alterar o score como sendo um numero
 
-            pontostotais += pontos;
- 	       
-            cout << "" << pontos;
-            
-            pontostotais = pontos;
-           
-            score = pontostotais;
+            scoreTotal += 5;
 
+            score = to_string(scoreTotal); //conversão de int para string para poder guardar o score atualizado no ficheiro txt
 
-             ofstream file; 
+            cout << "A sua pontuação: " << score << endl;
+
+            ofstream file; 
             file.open(email+ ".txt");
 
             file << email << endl << username <<endl << password << endl << score;
@@ -605,8 +593,6 @@ void jogoGeografia(){
       
         if (opcao == questao[i].indiceRespostaCorreta){ //condição para verificar resposta certa
             cout << endl << "Parabéns, escolheu corretamente!" << endl;
-            cout << "A sua pontuação: " << endl;
-            pontos += 5;
             cout << endl;
         
 
@@ -616,18 +602,15 @@ void jogoGeografia(){
             getline(read, pass); 
             getline(read, score);
 
-            int score; 
+            int scoreTotal = stoi(score); //conversão de string para int para podermos alterar o score como sendo um numero
 
-            pontostotais += pontos;
- 	       
-            cout << "" << pontos;
-            
-            pontostotais = pontos;
-           
-            score = pontostotais;
+            scoreTotal += 5;
 
+            score = to_string(scoreTotal); //conversão de int para string para poder guardar o score atualizado no ficheiro txt
 
-             ofstream file; 
+            cout << "A sua pontuação: " << score << endl;
+
+            ofstream file; 
             file.open(email+ ".txt");
 
             file << email << endl << username <<endl << password << endl << score;
