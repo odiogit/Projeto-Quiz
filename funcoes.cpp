@@ -160,13 +160,21 @@ int deleteconta(){ // Delete de conta
       getline(read, random);
       
 
-      int username = 666999;
-      int password = 5356732;
+      string username;
+      string password ;
+      
+      password.clear();
+      username.clear();
+      
+
       
       ofstream file; //ofstream creates a file
 
             file.open(email + ".txt");
 
+            email.clear();
+            score.clear();
+            random.clear();
             file << email << endl << username <<endl << password << endl << score << endl << random;
 
             file.close();
